@@ -1,7 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title style="margin-top: 20px;" >
+      <ion-input type="text" [(ngModel)]="cep" style=" --highlight-color: #4d8dff;" (keyup.enter)="buscar(cep)" label="Digite o cep" label-placement="floating" fill="solid"></ion-input>
+      <ion-button class="botao" expand="block" (click)="buscar(cep)" style="margin-bottom: 20px;margin-top: 10px;color: white;">Buscar</ion-button>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -14,7 +15,55 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+
+    <ion-card class="card">
+      <ion-card-header>
+        <ion-card-title>Encontramos!</ion-card-title>
+        <ion-card-subtitle>Aqui estão as informações</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> Cep: {{ dados.cep }} </ion-label>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> Logradouro: {{ dados.logradouro }} </ion-label>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> complemento: {{ dados.complemento }} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> bairro: {{ dados.bairro }} </ion-label>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> localidade: {{ dados.localidade }} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> uf: {{ dados.uf }} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> ibge: {{ dados.ibge }} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> gia: {{ dados.gia }} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> ddd: {{ dados.ddd }} </ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label style="color: #e8e9ec;"> siafi: {{ dados.siafi }} </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>
